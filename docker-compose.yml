@@ -1,0 +1,14 @@
+﻿services:
+  db:
+    image: postgres:16
+    container_name: mediflow_db
+    environment:
+      POSTGRES_USER: mediflow
+      POSTGRES_PASSWORD: mediflow
+      POSTGRES_DB: mediflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - mediflow_pg:/var/lib/postgresql/data
+volumes:
+  mediflow_pg:
